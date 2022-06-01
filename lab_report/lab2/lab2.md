@@ -67,4 +67,6 @@
 
         python manage.py runserver   
 
+# Output:
 
+![image of brand model](https://github.com/pradhan21/ecommerce/blob/master/lab_report/lab2/Screenshot%20(41).png)
