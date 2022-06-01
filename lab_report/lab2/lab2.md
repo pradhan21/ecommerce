@@ -3,7 +3,12 @@
 2) making different modules suitable as per needs and regestiring to database.
 
 # Introduction:
+A model is the single, definitive source of information about data. It contains the essential fields and behaviors of the data that is being stored. Generally, each model maps to a single database table.
 
+The basics:
+* Each model is a Python class that subclasses django.db.models.Model.
+* Each attribute of the model represents a database field.
+* With all of this, Django gives an automatically-generated database-access API
 
 # Procedure:
 1. in 'models.py' create a model for brands
@@ -74,3 +79,6 @@
 ![image of product model](https://github.com/pradhan21/ecommerce/blob/master/lab_report/lab2/Screenshot%20(43).png)
 
 ![image of view product](https://github.com/pradhan21/ecommerce/blob/master/lab_report/lab2/Screenshot%20(44).png)
+
+# Conclusion:
+Hwre from this lab session we got to know about how to create a model, edit the model in an appropriate manner, and enter and evaluate the entered data in the django server database. 
