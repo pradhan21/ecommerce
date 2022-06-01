@@ -69,4 +69,8 @@
 
 # Output:
 
-![image of brand model](https://github.com/pradhan21/ecommerce/blob/master/lab_report/lab2/Screenshot%20(41).png)
+![image of category model](https://github.com/pradhan21/ecommerce/blob/master/lab_report/lab2/Screenshot%20(41).png)
+
+![image of product model](https://github.com/pradhan21/ecommerce/blob/master/lab_report/lab2/Screenshot%20(43).png)
+
+![image of view product](https://github.com/pradhan21/ecommerce/blob/master/lab_report/lab2/Screenshot%20(44).png)
