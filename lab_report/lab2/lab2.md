@@ -81,4 +81,4 @@ The basics:
 ![image of view product](https://github.com/pradhan21/ecommerce/blob/master/lab_report/lab2/Screenshot%20(44).png)
 
 # Conclusion:
-Hwre from this lab session we got to know about how to create a model, edit the model in an appropriate manner, and enter and evaluate the entered data in the django server database. 
+Here from this lab session we got to know about how to create a model, edit the model in an appropriate manner, and enter and evaluate the entered data in the django server database. 
