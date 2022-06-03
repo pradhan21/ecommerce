@@ -2,9 +2,19 @@ from django.contrib import admin
 
 # Register your models here.
 from .models import Brand, Category, Product
-admin.site.register(Brand)
-admin.site.register(Category)
+class BrandAdmin(admin.ModelAdmin):
+    list_display = ["name",]
+    search_fields = ["name",]
+    class Meta:
+        model = Brand
+admin.site.register(Brand, BrandAdmin)
 
+class CategoryAdmin(admin.ModelAdmin):
+    list_display = ["name",]
+    search_fields = ["name",]
+    class Meta:
+        model = Category
+admin.site.register(Category, CategoryAdmin)
 
 class ProductAdmin(admin.ModelAdmin):
     list_display = ["image_tag", "name", "price", "brand", "category",]
