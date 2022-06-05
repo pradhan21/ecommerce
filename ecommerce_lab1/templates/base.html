@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+    {% load static %}
 <head>
 <!    <link rel="stylesheet"href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"/>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
@@ -17,11 +18,10 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
 
     <!-- Libraries Stylesheet -->
-    <link rel="stylesheet" type="text/css" href="css/style.css" />
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="{% static 'lib/owlcarousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
     
     <!-- Customized Bootstrap Stylesheet -->
-    <!<link href="css/style.css" rel="stylesheet">>
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
     <title>{% block title %} Electronics Commerce {% endblock %}</title>
         <style type="text/css">
             .min-h-100 { min-height: 100%; }
