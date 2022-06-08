@@ -1,5 +1,5 @@
 from django.contrib import admin
-
+from .models import CartItem
 # Register your models here.
 from .models import Brand, Category, Product
 
@@ -26,7 +26,7 @@ class ProductAdmin(admin.ModelAdmin):
         model = Product
 admin.site.register(Product, ProductAdmin)
 
-
+admin.site.register(CartItem)
 ####class CategoryAdmin(admin.ModelAdmin):
     #list_display = ["image_tag", "name", "price", "brand", "category",]
     ##list_filter = ["brand","category","price",]
