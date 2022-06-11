@@ -233,5 +233,9 @@ The syntax of the Django template language involves four constructs.
 
 6. run the server and check the output is correct or not.
 
+# output:
+![image of website](https://github.com/pradhan21/ecommerce/blob/master/lab_report/lab4/Screenshot%20(51).png)
+
+
 # conclusion:
 here in this lab session we understood how a base template is extended by another template and how to manupulate data and retrive from database using django.   
