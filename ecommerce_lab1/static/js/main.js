@@ -1,4 +1,4 @@
-
+var base_url = 'http://127.0.0.1:8000/'
 $(document).ready(function(){
 	"use strict";
 
@@ -48,13 +48,17 @@ $(document).ready(function(){
     /*=================================
     Javascript for banner area carousel
     ==================================*/
+    var previous_url = base_url + 'static/img/banner/prev.png'
+    var next_url = base_url + 'static/img/banner/next.png'
+    var previous1_url = base_url + 'static/img/product/prev.png'
+    var next1_url = base_url + 'static/img/product/next.png'
     $(".active-banner-slider").owlCarousel({
         items:1,
         autoplay:false,
         autoplayTimeout: 5000,
         loop:true,
         nav:true,
-        navText:["<img src='img/banner/prev.png'>","<img src='img/banner/next.png'>"],
+        navText:["<img src="+previous_url+">","<img src='"+next_url+"'>"],
         dots:false
     });
 
@@ -67,7 +71,7 @@ $(document).ready(function(){
         autoplayTimeout: 5000,
         loop:true,
         nav:true,
-        navText:["<img src='img/product/prev.png'>","<img src='img/product/next.png'>"],
+        navText:["<img src="+previous_url+">","<img src='"+next_url+"'>"],
         dots:false
     });
 
@@ -92,7 +96,7 @@ $(document).ready(function(){
         autoplayTimeout: 5000,
         loop:true,
         nav:true,
-        navText:["<img src='img/product/prev.png'>","<img src='img/product/next.png'>"],
+        navText:["<img src='static/img/product/prev.png'>","<img src='static/img/product/next.png'>"],
         dots:false
     });
 
