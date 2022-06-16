@@ -97,7 +97,7 @@ def cart(request):
             try:
         # get cart item and increase quantity
                 cart_item = CartItem.objects.get(user=request.user, product=product)
-                cart_item.quantity += int(quantity)
+                cart_item.quantity = int(quantity)
                 cart_item.entered_on = datetime.now()
             except CartItem.DoesNotExist:
         # initialize cart item
@@ -115,8 +115,11 @@ def cart(request):
         for item in cart_items:
             total += item.product.price * item.quantity
         # return view
-        context = {'cart_items': cart_items,'total': total,}
+        context = {'cart_items': cart_items,
+        'total': total,
+        }
         return render(request, "cart.html", context)
+
 
 
 def removecart(request, id):
@@ -129,3 +132,11 @@ def removecart(request, id):
         pass
 # redirect to cart
     return redirect(cart)
+
+def success_page(request):
+    message = request.session["message"]
+    return render(request, "success.html", {"message": message})
+    
+def error_page(request):
+    message = request.session["message"]
+    return render(request, "error.html", {"message": message})

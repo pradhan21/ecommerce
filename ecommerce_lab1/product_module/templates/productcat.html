@@ -2,62 +2,166 @@
 {% block title %} Products {% endblock %}
 {% block header %} Products {% endblock %}
 {% block content1 %}
-<!--/.Navbar-->
-{% for product in products %}
-<div class="row border bg-light">
-    <div class="col-md-4">
-        <div class="text-center">
-            <img src="{{ product.image_url }}" style="height:200px;width:auto;" alt="{{ product.name }}">
+<!-- Start Banner Area -->
+<section class="banner-area organic-breadcrumb">
+    <div class="container">
+        <div class="breadcrumb-banner d-flex flex-wrap align-items-center justify-content-end">
+            <div class="col-first">
+                <h1>Shop Category page</h1>
+                <nav class="d-flex align-items-center">
+                    <a href="/">Home<span class="lnr lnr-arrow-right"></span></a>
+                    <a href="#">Shop<span class="lnr lnr-arrow-right"></span></a>
+                    <a href="">Fashon Category</a>
+                </nav>
+            </div>
         </div>
     </div>
-    <div class="col-md-3">
-        <span class="btn btn-danger disabled">{{ product.brand.name}}</span>
-        <span class="btn btn-info disabled">{{ product.category.name}}</span>
-        <h3>{{ product.name }}</h3>
-        <h4 class="bold text-secondary"><strong>NRs. {{ product.price }}</strong></h4>
-        <form class="d-flex" action="/cart" method="GET">
-<!-- Default input -->
-            <input type="hidden" name="id" value="{{product.id}}" />
-            <input type="number" name="qty" value="1" aria-label="Search" class="form-control" style="width: 100px">
-            <button id="btn-add-to-cart" class="btn btn-primary btn-md"type="submit" data-toggle="modal" data-target="#cart-model"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Add to cart</button>
-        </form>
-    </div>
-    <div class="col-md-5">
-        <table class="table table-sm">
-            <tr>
-                <td>Available Quantity</td>
-                <td>{{product.quantity}}</td>
-            </tr>
-            <tr>
-                <td>Color Code</td>
-                <td>
-                    <div style="height: 25px; width: 25px; background-color: '{{ product.color_code }}'">
+</section>
+
+<!-- End Banner Area -->
+<div class="container">
+    <div class="row">
+        <div class="sidebar-filter mt-50">
+            <div class="top-filter-head">Product Filters</div>
+            <div class="common-filter">
+                <div class="head">Brands</div>
+                <form action="#">
+                    <ul>
+                        <li class="filter-list"><input class="pixel-radio" type="radio" id="apple" name="brand"><label for="apple">Apple<span>(29)</span></label></li>
+                        <li class="filter-list"><input class="pixel-radio" type="radio" id="asus" name="brand"><label for="asus">Asus<span>(29)</span></label></li>
+                        <li class="filter-list"><input class="pixel-radio" type="radio" id="gionee" name="brand"><label for="gionee">Gionee<span>(19)</span></label></li>
+                        <li class="filter-list"><input class="pixel-radio" type="radio" id="micromax" name="brand"><label for="micromax">Micromax<span>(19)</span></label></li>
+                        <li class="filter-list"><input class="pixel-radio" type="radio" id="samsung" name="brand"><label for="samsung">Samsung<span>(19)</span></label></li>
+                    </ul>
+                </form>
+            </div>
+            <div class="common-filter">
+                <div class="head">Color</div>
+                <form action="#">
+                    <ul>
+                        <li class="filter-list"><input class="pixel-radio" type="radio" id="black" name="color"><label for="black">Black<span>(29)</span></label></li>
+                        <li class="filter-list"><input class="pixel-radio" type="radio" id="balckleather" name="color"><label for="balckleather">Black
+                                Leather<span>(29)</span></label></li>
+                        <li class="filter-list"><input class="pixel-radio" type="radio" id="blackred" name="color"><label for="blackred">Black
+                                with red<span>(19)</span></label></li>
+                        <li class="filter-list"><input class="pixel-radio" type="radio" id="gold" name="color"><label for="gold">Gold<span>(19)</span></label></li>
+                        <li class="filter-list"><input class="pixel-radio" type="radio" id="spacegrey" name="color"><label for="spacegrey">Spacegrey<span>(19)</span></label></li>
+                    </ul>
+                </form>
+            </div>
+            <div class="common-filter">
+                <div class="head">Price</div>
+                <div class="price-range-area">
+                    <div id="price-range"></div>
+                    <div class="value-wrapper d-flex">
+                        <div class="price">Price:</div>
+                        <span>$</span>
+                        <div id="lower-value"></div>
+                        <div class="to">to</div>
+                        <span>$</span>
+                        <div id="upper-value"></div>
                     </div>
-                </td>
-            </tr>
-            <tr>
-                <td>Brand</td>
-                <td>{{ product.brand.name }}</td>
-            </tr>
-            <tr>
-                <td>Category</td>
-                <td>{{ product.category.name }}</td>
-            </tr>
-            <tr>
-                <td>Registered On</td>
-                <td>{{ product.registered_on }}</td>
-            </tr>
-            <tr>
-                <td>Is Active</td>
-                <td>{% if product.is_active %}
-                        <input type="checkbox" checked />
-                    {% else %}
-                        <input type="checkbox" />
-                    {% endif %}
-                </td>
-            </tr>
-        </table>
+                </div>
+            </div>
+        </div>
+    
+        <div class="col-xl-9 col-lg-8 col-md-7">
+        <!-- Start Filter Bar -->
+        <div class="filter-bar d-flex flex-wrap align-items-center">
+            <div class="sorting">
+                <select>
+                    <option value="1">Default sorting</option>
+                    <option value="1">Default sorting</option>
+                    <option value="1">Default sorting</option>
+                </select>
+            </div>
+            <div class="sorting mr-auto">
+                <select>
+                    <option value="1">Show 12</option>
+                    <option value="1">Show 12</option>
+                    <option value="1">Show 12</option>
+                </select>
+            </div>
+            <div class="pagination">
+                <a href="#" class="prev-arrow"><i class="fa fa-long-arrow-left" aria-hidden="true"></i></a>
+                <a href="#" class="active">1</a>
+                <a href="#">2</a>
+                <a href="#">3</a>
+                <a href="#" class="dot-dot"><i class="fa fa-ellipsis-h" aria-hidden="true"></i></a>
+                <a href="#">6</a>
+                <a href="#" class="next-arrow"><i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
+            </div>
+        </div>
+            <!-- End Filter Bar -->
+                    <!-- Start Best Seller -->
+        <section class="lattest-product-area pb-40 category-list">
+            <div class="row">
+                <!-- single product -->
+                
+                    {% for product in products %}
+						<div class="col-lg-4 col-md-6">
+							<div class="single-product">
+								<img class="img-fluid" src="{{ product.image_url }}" alt="{{ product.name }}">
+								<div class="product-details">
+									<h6>{{ product.name }}</h6>
+									<div class="price">
+										<h6>NRs. {{ product.price }}</h6>
+										<h6 class="l-through">$210.00</h6>
+									</div>
+									<div class="prd-bottom">
+                                    <form class="d-flex" action="/cart" method="GET">
+                                        <input type="hidden" name="id" value="{{product.id}}" />
+                                <input type="number" name="qty" value="1" aria-label="Search" class="form-control" style="width: 100px">  
+										<a href="" class="social-info" id="btn-add-to-cart" ><button style =" border:none; background-color:none;">
+											<span class="ti-bag"  data-toggle="modal" data-target="#cart-model"></span>
+											<p  class="hover-text" >add to bag</p>
+                                        </button>
+										</a>
+										<a href="" class="social-info">
+											<span class="lnr lnr-heart"></span>
+											<p class="hover-text">Wishlist</p>
+										</a>
+										<a href="" class="social-info">
+											<span class="lnr lnr-sync"></span>
+											<p class="hover-text">compare</p>
+										</a>
+										<a href="" class="social-info">
+											<span class="lnr lnr-move"></span>
+											<p class="hover-text">view more</p>
+										</a>
+                                        </form>
+									</div>
+								</div>
+							</div>
+						</div>
+                        {% endfor %}
+                    </div>
+                </section>
+                <!-- single product -->
+                    
+                !-- Start Filter Bar -->
+                    <div class="filter-bar d-flex flex-wrap align-items-center">
+                        <div class="sorting mr-auto">
+                            <select>
+                                <option value="1">Show 12</option>
+                                <option value="1">Show 12</option>
+                                <option value="1">Show 12</option>
+                            </select>
+                        </div>
+                        <div class="pagination">
+                            <a href="#" class="prev-arrow"><i class="fa fa-long-arrow-left" aria-hidden="true"></i></a>
+                            <a href="#" class="active">1</a>
+                            <a href="#">2</a>
+                            <a href="#">3</a>
+                            <a href="#" class="dot-dot"><i class="fa fa-ellipsis-h" aria-hidden="true"></i></a>
+                            <a href="#">6</a>
+                            <a href="#" class="next-arrow"><i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+                    <!-- End Filter Bar -->
+        </div>
     </div>
 </div>
-{% endfor %}
+        
+
 {% endblock %}
