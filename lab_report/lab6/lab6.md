@@ -159,3 +159,7 @@ A shopping cart is a piece of software that keeps the record of the items a buye
 
 # Outputs:
 
+![image of cart](https://github.com/pradhan21/ecommerce/blob/master/lab_report/lab6/Screenshot%20(53).png)
+
+# Conclusion:
+here from this lab session we  got to know how to add an item from the product template to cart template dynamically and remove them accordingly.
