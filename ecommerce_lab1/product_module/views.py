@@ -105,7 +105,7 @@ def cart(request):
                 user=request.user,
                 product=product,
                 quantity=int(quantity),entered_on = datetime.now(),
-            )
+                )
         # save to database
             cart_item.save()
         # retrieve the cart items for the user from db
