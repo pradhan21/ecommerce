@@ -51,3 +51,4 @@ A payment gateway allows a firm to −
 ![image of token](https://github.com/pradhan21/ecommerce/blob/master/lab_report/lab%207/Screenshot%20(55).png)
 
 # Conclusion:
+from this lab session we came to know about how the online token is acutally generated and how the paymentgatway works in the backend.
