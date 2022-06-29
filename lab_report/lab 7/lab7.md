@@ -47,8 +47,7 @@ A payment gateway allows a firm to −
 6. run the server and generate the token.
 
 # Outputs:
-aa
-
-![image of cart](https://github.com/pradhan21/ecommerce/blob/master/lab_report/lab6/Screenshot%20(53).png)
+![image of token generation](https://github.com/pradhan21/ecommerce/blob/master/lab_report/lab%207/Screenshot%20(56).png)
+![image of token](https://github.com/pradhan21/ecommerce/blob/master/lab_report/lab%207/Screenshot%20(55).png)
 
 # Conclusion:
