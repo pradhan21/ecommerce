@@ -9,8 +9,6 @@ def confirmpayment(request):
     if request.method == "POST":
         token = request.POST.get("token")
         amount = request.POST.get("amount")
-        product_id=request.POST.get("id")
-        quantity=request.POST.get("qty")
         # clean up
         token = token.strip()
         amount = float(amount)
@@ -23,34 +21,8 @@ def confirmpayment(request):
             request.session["message"] = str(e)
             return redirect(reverse('error_page'))
         else:
-            if product_id:
-            # retrieve product data
-                product = Product.objects.get(id=product_id)
-                try:
-            # get cart item and increase quantity
-                    cart_item = CartItem.objects.get(user=request.user, product=product)
-                    cart_item.quantity = int(quantity)
-                    cart_item.entered_on = datetime.now()
-                except CartItem.DoesNotExist:
-        # initialize cart item
-                    cart_item = CartItem(
-                    user=request.user,
-                    product=product,
-                    quantity=int(quantity),entered_on = datetime.now(),
-                )
-        # save to database
-                cart_item.save()
-            # retrieve the cart items for the user from db
-            cart_items = CartItem.objects.filter(user=request.user)
-            # calculate total
-            total = 0
-            for item in cart_items:
-                total += item.product.price * item.quantity
-            # return view
-            context = {'cart_items': cart_items,
-            'total': total,
-            }
-            return redirect(reverse('success_page',context))
+            request.session["message"] = f"Payment successfully completed with NRs. {amount} from your balance!"
+            return redirect(reverse('success_page'))
 
 def make_payment(token, amount):
     try:
